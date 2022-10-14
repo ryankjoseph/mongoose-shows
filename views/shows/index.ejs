@@ -19,6 +19,7 @@
         <th>Genre</th>
         <th>Cast</th>
         <th>Delete</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -35,6 +36,11 @@
               <input type="submit" value="X">
           </form>
         </td>
+        <td>
+          <form action="shows/update/<%= s.id%>" method="GET">
+            <input type="submit" value="Edit">
+        </form>
+      </td>
         </tr>
       <% }) %>
     </tbody>

@@ -8,6 +8,8 @@ const showsCtrl = require('../controllers/shows')
 // });
 
 router.get('/', showsCtrl.index)
+router.get('/update/:id', showsCtrl.updateShowForm)
+router.post('/update/:id', showsCtrl.updateShow)
 router.get('/delete/:id', showsCtrl.delete)
 
 router.get('/new', showsCtrl.new);
