@@ -1,0 +1,8 @@
+table{
+  color:red;
+  text-align: center;
+  padding: 30px;
+}
+td, th {
+padding: 30px;
+}

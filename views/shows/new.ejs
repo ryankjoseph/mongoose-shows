@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Enter a New Show</h2>
+<form action="/shows" method="POST">
+  <label>Title:
+    <input type="text" name="title">
+  </label><br>
+  <label>Starting Year:
+    <input type="text" name="startingYear">
+  </label><br>
+  <label>Ending Year:
+    <input type="text" name="endingYear">
+  </label><br>
+  <label>MPAA Rating
+    <select name="mpaaRating">
+      <option value="G">G</option>
+      <option value="PG">PG</option>
+      <option value="PG-13">PG-13</option>
+      <option value="R">R</option>
+    </select>
+  </label><br>
+  <label>Cast (separate actors with commas):
+    <input type="text" name="cast">
+  </label><br>
+  <label>Genre
+    <input type="checkbox" name="genre" id="genre_action" value="Action"><label for="genre_action">Action</label>
+    <input type="checkbox" name="genre" id="genre_adventure" value="Adventure"><label for="genre_adventure">Adventure</label>
+    <input type="checkbox" name="genre" id="genre_mystery" value="Mystery"><label for="genre_mystery">Mystery</label>
+    <input type="checkbox" name="genre" id="genre_fantasy" value="Fantasy"><label for="genre_fantasy">Fantasy</label>
+    <input type="checkbox" name="genre" id="genre_horror"  value="Horror"><label for="genre_horror">Horror</label><br>
+  <label>Ongoing?
+    <input type="checkbox" name="ongoing">
+  </label><br>
+  <input type="submit" value="Add Show">
+</form>
+<a href="/shows">
+  <button>All Shows</button></a>
+</body>
+</html>

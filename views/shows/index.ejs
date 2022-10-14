@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href = "stylesheets/index.css">
+  <title>All Shows</title>
+</head>
+<body>
+  <h1>Show List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Starting Year</th>
+        <th>Ending Year</th>
+        <th>mpaaRating</th>
+        <th>Genre</th>
+        <th>Cast</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% shows.forEach(function(s){ %>
+      <tr>
+          <td><%= s.title %></td>
+          <td><%= s.startingYear %></td>
+          <td><%= s.endingYear %></td>
+          <td><%= s.mpaaRating %></td>
+          <td><%= s.genre%></td>
+          <td><%= s.cast.join(', ')%></td>
+          <td>
+            <form action="shows/delete/<%= s.id%>" method="GET">
+              <input type="submit" value="X">
+          </form>
+        </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
