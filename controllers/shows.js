@@ -28,6 +28,8 @@ async function updateShow(req,res){
   if(!req.body.genre) req.body.genre=[''];
   const show = await Show.findByIdAndUpdate(req.params.id, {
     title:req.body.title,
+    description: req.body.description,
+    image: req.body.image,
     startingYear: req.body.startingYear,
     endingYear: req.body.endingYear,
     mpaaRating: req.body.mpaaRating,
