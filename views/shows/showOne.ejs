@@ -4,56 +4,45 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
   <title><%= show.title %></title>
 </head>
 <body> 
-  <table>
+<div class="has-text-right title-is-10">
+  <a class="has-text-right " href="/shows">
+    <button class="has-text-right">All Shows</button></a>
+    <hr>
+</div>
+  <div class="card">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-100x100">
+            <img src="<%= show.image %>" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class=" has-text-right title is-20"><%= show.title %></p>
+          <p class="has-text-right subtitle is-4"><%= show.startingYear %>- <%= show.endingYear %> </p>
+          <p class="has-text-right subtitle is-7"> Rated <%= show.mpaaRating %></p>
+          <p class="has-text-centered subtitle is-3">Starring: <%= show.cast.join (', ') %> </p>
+          <p class="has-text-centered subtitle is-5"><%= show.genre.join(', ') %> </p>
+        </div>
+      </div>
+      <hr>
   
-      <tr>
-        <td>Title: </td>
-        <td><%= show.title %> </td>
-      </tr>
-      <% if(show.ongoing){ %>
-      <tr>
-        <td>Years running: </td>
-        <td> <%= show.startingYear %> - Ongoing </td>
-      </tr>
-        <% } else { %>
-          <tr>
-            <td>Years running: </td>
-            <td> <%= show.startingYear %> - <%= show.endingYear %></td>
-          </tr>
-          <% } %> 
-      <tr>
-        <td>mpaaRating: </td> 
-        <td> <%= show.mpaaRating %></td>
-      </tr>
-      <tr>
-        <td>Genre: </td>
-        <td> <%= show.genre.join(', ') %></td>
-      </tr>
-        
-      <tr>
-        <td>Cast: </td>
-        <td> <%= show.cast.join(', ') %></td>
-      </tr>
-      </table>
-
-      <td>
-        <form action="/shows/update/<%= show.id%>" method="GET">
-          <input type="submit" value="Edit">
-      </form>
-    </td>
+      <div class="content has-text-centered title is-10">
+        <%= show.description %>
+        <br>
+      </div>
+      <footer class="card-footer">
+        <a href="/shows/update/<%= show.id%>" class="card-footer-item">Edit</a>
+        <a href="/shows/delete/<%= show.id%>"" class="card-footer-item">Delete</a>
+      </footer>
+    </div>
+  </div>
 
 
-    <td>
-      <form action="/shows/delete/<%= show.id%>" method="GET">
-        <input type="submit" value="Delete">
-    </form>
-  </td>
-
-<a href="/shows">
-  <button>All Shows</button></a>
     
 </body>
 </html>
