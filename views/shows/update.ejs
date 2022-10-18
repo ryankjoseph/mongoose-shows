@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="has-background-dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+  <link rel="stylesheet" href = "stylesheets/index.css">
   <title>Update Shows</title>
 </head>
-<body>
+<body class="dark-body has-background-dark">
   <h2>Edit the fields you would like to update</h2>
 <form class="has-text-centered" action="/shows/update/<%= show.id %>" method="POST">
   <div class = "field">
 
-    <label>Title:
+    <label class="label has-text-white">Title:
     </label>
       <div class="control">
 
@@ -22,7 +23,7 @@
     <br>
   <div class ="field">
 
-    <label>Description:
+    <label class="label has-text-white">Description:
     </label>
     <div class="control">
 
@@ -32,7 +33,7 @@
   <br>
   <div class = "field">
 
-    <label>Image:
+    <label class="label has-text-white">Image:
     </label>
 
     <div class="control">
@@ -42,7 +43,7 @@
   <br>
   <div class = "field">
 
-    <label>Starting Year:
+    <label class="label has-text-white">Starting Year:
     </label>
     <div class="control">
       <input type="text" name="startingYear" value="<%= show.startingYear %>">
@@ -50,7 +51,7 @@
   </div>
   <br>
   <div class = "field">  
-    <label>Ending Year:
+    <label class="label has-text-white">Ending Year:
     </label>
     <div class="control"> 
       <input type="text" name="endingYear" value="<%= show.endingYear %>"">
@@ -58,7 +59,7 @@
   </div>
   <br>
   <div class = "field">
-    <label>MPAA Rating
+    <label class="label has-text-white">MPAA Rating
     </label>
     <div class="control">
       
@@ -72,55 +73,61 @@
   </div>
   <br>
   <div class = "field">
-    <label>Cast (separate actors with commas):
+    <label class="label has-text-white">Cast (separate actors with commas):
     </label>
     <div class="control">
       <input type="text" name="cast" value="<%= show.cast.join(',') %>"">
     </div>
   </div>
   <br>
-  <label>Genre:
+  <label class="label has-text-white">Genre:
 
     <% if(show.genre.includes("Action")){ %>
-      <input type="checkbox" name="genre" id="genre_action" value="Action" checked><label for="genre_action">Action</label>
+      <input type="checkbox" name="genre" id="genre_action" value="Action" checked><label for="genre_action">&nbsp Action &nbsp </label>
 
       <% } else { %>
-        <input type="checkbox" name="genre" id="genre_action" value="Action"><label for="genre_action">Action</label>
+        <input type="checkbox" name="genre" id="genre_action" value="Action"><label for="genre_action">&nbsp Action &nbsp </label>
       <% } %>
+      <% if(show.genre.includes("Comedy")){ %>
+        <input type="checkbox" name="genre" id="genre_comedy" value="Comedy" checked><label for="genre_comedy">&nbsp Comedy &nbsp </label>
+  
+        <% } else { %>
+          <input type="checkbox" name="genre" id="genre_comedy" value="Comedy"><label for="genre_comedy">&nbsp Comedy &nbsp </label>
+        <% } %>
     <% if(show.genre.includes("Adventure")){ %>
 
-      <input type="checkbox" name="genre" id="genre_adventure" value="Adventure" checked><label for="genre_adventure">Adventure</label>
+      <input type="checkbox" name="genre" id="genre_adventure" value="Adventure" checked><label for="genre_adventure">&nbsp Adventure &nbsp </label>
       <% } else { %>
       
-        <input type="checkbox" name="genre" id="genre_adventure" value="Adventure"><label for="genre_adventure">Adventure</label>
+        <input type="checkbox" name="genre" id="genre_adventure" value="Adventure"><label for="genre_adventure">&nbsp Adventure &nbsp </label>
       <% } %>
     <% if(show.genre.includes("Mystery")){ %>
-      <input type="checkbox" name="genre" id="genre_mystery" value="Mystery" checked><label for="genre_mystery">Mystery</label>
+      <input type="checkbox" name="genre" id="genre_mystery" value="Mystery" checked><label for="genre_mystery">&nbsp Mystery &nbsp </label>
       <% } else { %>
-        <input type="checkbox" name="genre" id="genre_mystery" value="Mystery"><label for="genre_mystery">Mystery</label>
+        <input type="checkbox" name="genre" id="genre_mystery" value="Mystery"><label for="genre_mystery">&nbsp Mystery &nbsp </label>
       <% } %>
     <% if(show.genre.includes("Fantasy")){ %>
-      <input type="checkbox" name="genre" id="genre_fantasy" value="Fantasy" checked><label for="genre_fantasy" >Fantasy</label>
+      <input type="checkbox" name="genre" id="genre_fantasy" value="Fantasy" checked><label for="genre_fantasy" >&nbsp Fantasy &nbsp </label>
 
       <% } else { %>
-        <input type="checkbox" name="genre" id="genre_fantasy" value="Fantasy"><label for="genre_fantasy">Fantasy</label>
+        <input type="checkbox" name="genre" id="genre_fantasy" value="Fantasy"><label for="genre_fantasy">&nbsp Fantasy &nbsp </label>
       
       <% } %>
     <% if(show.genre.includes("Horror")){ %>
-      <input type="checkbox" name="genre" id="genre_horror"  value="Horror" checked><label for="genre_horror" checked>Horror</label><br>
+      <input type="checkbox" name="genre" id="genre_horror"  value="Horror" checked><label for="genre_horror" checked>&nbsp Horror &nbsp </label><br>
 
       <% } else { %>
-        <input type="checkbox" name="genre" id="genre_horror"  value="Horror"><label for="genre_horror">Horror</label><br>
+        <input type="checkbox" name="genre" id="genre_horror"  value="Horror"><label for="genre_horror">&nbsp Horror &nbsp </label><br>
       
       <% } %>
       
-  <label>Ongoing?
+  <label class="label has-text-white">Ongoing?
     <% if(show.ongoing){ %>
       <input type="checkbox" name="ongoing" checked>
       <% } else { %>
         <input type="checkbox" name="ongoing">
       <% } %>
-  </label><br>
+  </label class="label has-text-white"><br>
   <input type="submit" value="Update Show">
 </form>
 </body>

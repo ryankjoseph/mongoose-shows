@@ -1,8 +1,7 @@
-@import " ../../../../node_modules/bulma/css/bulma.css";
-table{
-  color:red;
-  text-align: center;
-  padding: 30px;
+
+.dark-body{
+  background-color:black;
+  height:100%
 }
 td, th {
 padding: 30px;

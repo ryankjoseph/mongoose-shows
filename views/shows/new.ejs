@@ -4,43 +4,65 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href = "stylesheets/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+  <title>Add a New Show</title>
 </head>
 <body>
   <h2>Enter a New Show</h2>
 <form action="/shows" method="POST">
-  <label>Title:
-    <input type="text" name="title" >
-  </label><br>
-  <label>Description:
-    <input type="text" name="description">
-  </label><br>
-  <label>Image:
-    <input type="text" name="image">
-  </label><br>
-  <label>Starting Year:
-    <input type="text" name="startingYear">
-  </label><br>
-  <label>Ending Year:
-    <input type="text" name="endingYear">
-  </label><br>
-  <label>MPAA Rating
+  
+  <div class="field">
+  <div class="control">
+    <input type="text" name="title" placeholder="Title">
+    </div>
+    </div>
+  <div class="field">
+  <div class="control">
+    <input type="text" name="description" placeholder="Description">
+  </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+    <input type="text" name="image" placeholder="Image Link">
+  </div>
+  </div>
+  <div class="field">
+  <div class="control">
+    <input type="text" name="startingYear" placeholder="Starting Year">
+  </div>
+  </div>
+  
+  <div class="field">
+    <div class="control">
+    <input type="text" name="endingYear" placeholder="Ending Year">
+    </div>
+    </div>
+  <div class = "field">
+    <label>MPAA Rating
+    </label>
+    <div class="control">
     <select name="mpaaRating">
       <option value="G">G</option>
       <option value="PG">PG</option>
       <option value="PG-13">PG-13</option>
       <option value="R">R</option>
     </select>
-  </label><br>
+    </div>
+  </div>
   <label>Cast (separate actors with commas):
+  </label>
     <input type="text" name="cast">
-  </label><br>
-  <label>Genre
-    <input type="checkbox" name="genre" id="genre_action" value="Action"><label for="genre_action">Action</label>
-    <input type="checkbox" name="genre" id="genre_adventure" value="Adventure"><label for="genre_adventure">Adventure</label>
-    <input type="checkbox" name="genre" id="genre_mystery" value="Mystery"><label for="genre_mystery">Mystery</label>
-    <input type="checkbox" name="genre" id="genre_fantasy" value="Fantasy"><label for="genre_fantasy">Fantasy</label>
-    <input type="checkbox" name="genre" id="genre_horror"  value="Horror"><label for="genre_horror">Horror</label><br>
+  <br>
+  <label>Genre:</label>
+  <br>    
+  <input type="checkbox" name="genre" id="genre_comedy" value="Comedy"><label for="genre_comedy"> &nbsp Comedy &nbsp </label>
+    <input type="checkbox" name="genre" id="genre_action" value="Action"><label for="genre_action"> &nbsp Action &nbsp </label>
+    <input type="checkbox" name="genre" id="genre_adventure" value="Adventure"><label for="genre_adventure">&nbsp Adventure &nbsp </label>
+    <input type="checkbox" name="genre" id="genre_mystery" value="Mystery"><label for="genre_mystery">&nbsp Mystery &nbsp </label>
+    <input type="checkbox" name="genre" id="genre_fantasy" value="Fantasy"><label for="genre_fantasy">&nbsp Fantasy &nbsp </label>
+    <input type="checkbox" name="genre" id="genre_horror"  value="Horror"><label for="genre_horror">&nbsp Horror &nbsp </label><br>
   <label>Ongoing?
     <input type="checkbox" name="ongoing">
   </label><br>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="has-background-dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href = "stylesheets/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
   <title><%= show.title %></title>
 </head>
@@ -13,7 +14,7 @@
     <button class="has-text-right">All Shows</button></a>
     <hr>
 </div>
-  <div class="card">
+  <div class="card has-background-dark">
     <div class="card-content">
       <div class="media">
         <div class="media-left">
@@ -22,16 +23,16 @@
           </figure>
         </div>
         <div class="media-content">
-          <p class=" has-text-right title is-20"><%= show.title %></p>
-          <p class="has-text-right subtitle is-4"><%= show.startingYear %>- <%= show.endingYear %> </p>
-          <p class="has-text-right subtitle is-7"> Rated <%= show.mpaaRating %></p>
-          <p class="has-text-centered subtitle is-3">Starring: <%= show.cast.join (', ') %> </p>
-          <p class="has-text-centered subtitle is-5"><%= show.genre.join(', ') %> </p>
+          <p class=" has-text-right has-text-white title is-20"><%= show.title %></p>
+          <p class="has-text-right has-text-white subtitle is-4"><%= show.startingYear %>- <%= show.endingYear %> </p>
+          <p class="has-text-right has-text-white subtitle is-7"> Rated <%= show.mpaaRating %></p>
+          <p class="has-text-centered has-text-white subtitle is-3">Starring: <%= show.cast.join (', ') %> </p>
+          <p class="has-text-centered has-text-white subtitle is-5"><%= show.genre.join(', ') %> </p>
         </div>
       </div>
       <hr>
   
-      <div class="content has-text-centered title is-10">
+      <div class="content has-text-centered has-text-white title is-10">
         <%= show.description %>
         <br>
       </div>
