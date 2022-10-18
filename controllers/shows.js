@@ -5,16 +5,17 @@ module.exports = {
   add: addShow,
   index: allShows,
   delete:deleteShow,
+  showOne,
   updateShowForm,
   updateShow
 };
-
+async function showOne(req,res){
+  const show = await Show.findById(req.params.id)
+  res.render('shows/showOne', {show:show});
+}
 async function updateShowForm(req,res){
   const show = await Show.findById(req.params.id)
-  console.log('genre',show.genre);
   const showString = show.genre.includes('Mystery');
-  console.log('genre',showString);
-  console.log('the id', show.id)
   res.render('shows/update', {show:show});
 }
 
@@ -23,22 +24,19 @@ async function updateShow(req,res){
 
   req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
   if(req.body.cast) req.body.cast = req.body.cast.split(',');
-  console.log('body')
-  console.log(req.body.genre);
-  if(!req.body.genre) req.body.genre=[''];
-  console.log(req.body.genre);
 
+  if(!req.body.genre) req.body.genre=[''];
   const show = await Show.findByIdAndUpdate(req.params.id, {
     title:req.body.title,
     startingYear: req.body.startingYear,
     endingYear: req.body.endingYear,
     mpaaRating: req.body.mpaaRating,
     cast: req.body.cast,
-    genre: req.body.genre
+    genre: req.body.genre,
+    ongoing: !!req.body.ongoing
 
   })
-  console.log(show)
-  res.redirect('/shows');
+  res.redirect(`/shows/show/${req.params.id}`);
 }
 
 async function deleteShow(req,res){

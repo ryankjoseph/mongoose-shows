@@ -2,12 +2,8 @@ var express = require('express');
 var router = express.Router();
 const showsCtrl = require('../controllers/shows')
 
-/* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
-
 router.get('/', showsCtrl.index)
+router.get('/show/:id', showsCtrl.showOne)
 router.get('/update/:id', showsCtrl.updateShowForm)
 router.post('/update/:id', showsCtrl.updateShow)
 router.get('/delete/:id', showsCtrl.delete)

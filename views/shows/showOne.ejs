@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= show.title %></title>
+</head>
+<body> 
+  <table>
+  
+      <tr>
+        <td>Title: </td>
+        <td><%= show.title %> </td>
+      </tr>
+      <% if(show.ongoing){ %>
+      <tr>
+        <td>Years running: </td>
+        <td> <%= show.startingYear %> - Ongoing </td>
+      </tr>
+        <% } else { %>
+          <tr>
+            <td>Years running: </td>
+            <td> <%= show.startingYear %> - <%= show.endingYear %></td>
+          </tr>
+          <% } %> 
+      <tr>
+        <td>mpaaRating: </td> 
+        <td> <%= show.mpaaRating %></td>
+      </tr>
+      <tr>
+        <td>Genre: </td>
+        <td> <%= show.genre.join(', ') %></td>
+      </tr>
+        
+      <tr>
+        <td>Cast: </td>
+        <td> <%= show.cast.join(', ') %></td>
+      </tr>
+      </table>
+
+      <td>
+        <form action="/shows/update/<%= show.id%>" method="GET">
+          <input type="submit" value="Edit">
+      </form>
+    </td>
+
+
+    <td>
+      <form action="/shows/delete/<%= show.id%>" method="GET">
+        <input type="submit" value="Delete">
+    </form>
+  </td>
+
+<a href="/shows">
+  <button>All Shows</button></a>
+    
+</body>
+</html>
