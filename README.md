@@ -15,6 +15,5 @@ npm i bulma
 ```
 
 ## Roadmap
-- Incorporate Bulma to make the views aesthetically pleasing in card format.
-- Add images of shows
+- Incorporate Bulma to make the views aesthetically pleasing in card format (In progress)
 - Create a cast subdocument
